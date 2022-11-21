@@ -21,6 +21,7 @@ import { useState, useEffect } from "react";
 
 import WeatherCard from "./WeatherCard";
 import Location from "./Location";
+import { alignProperty } from "@mui/material/styles/cssUtils";
 
 function Copyright() {
   return (
@@ -41,11 +42,36 @@ export default function Dashboard() {
   const [cards, setCards] = useState([]);
 
   function AddLocation(location) {
-    setCards((cards) => [...cards, location]);
+    let query =
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+      location +
+      "&APPID=" +
+      "1392939c8de4d48505175baaadda2965";
+
+    let weatherData;
+
+    try {
+      async function getData() {
+        const response = await fetch(query, { mode: "cors" });
+        weatherData = await response.json();
+        //data = weatherData;
+        //img.src = catData.data.images.original.url;
+        console.log(weatherData);
+      }
+
+      getData();
+
+      setCards((cards) => [...cards, location]);
+    } catch (e) {}
+
+    //if (weatherData.base == undefined) console.log("invalid");
+    //else console.log("valid");
+
+    //if (data.base == undefined) console.log("invalid location");
   }
 
   useEffect(() => {
-    AddLocation("Melbourne");
+    AddLocation("Sydneyy");
   }, []);
 
   return (
