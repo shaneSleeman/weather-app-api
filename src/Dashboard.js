@@ -17,7 +17,7 @@ import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { TextField } from "@mui/material";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import WeatherCard from "./WeatherCard";
 import Location from "./Location";
@@ -35,14 +35,18 @@ function Copyright() {
   );
 }
 
-function AddLocation() {}
-
-AddLocation("Melbourne");
-
 const theme = createTheme();
 
 export default function Dashboard() {
-  const [cards, setCards] = useState([1]);
+  const [cards, setCards] = useState([]);
+
+  function AddLocation(location) {
+    setCards((cards) => [...cards, location]);
+  }
+
+  useEffect(() => {
+    AddLocation("Melbourne");
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
