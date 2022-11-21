@@ -17,6 +17,8 @@ import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { TextField } from "@mui/material";
 
+import { useState } from "react";
+
 import WeatherCard from "./WeatherCard";
 import Location from "./Location";
 
@@ -33,11 +35,15 @@ function Copyright() {
   );
 }
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+function AddLocation() {}
+
+AddLocation("Melbourne");
 
 const theme = createTheme();
 
 export default function Dashboard() {
+  const [cards, setCards] = useState([1]);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -75,7 +81,7 @@ export default function Dashboard() {
               paragraph
             >
               Enter a city below, then click Add Location. If the location
-              exists, a card containing the city's weather and an image will be
+              exists, a card containing the city's weather and image will be
               displayed. Click on the card to remove!
             </Typography>
             <Stack
