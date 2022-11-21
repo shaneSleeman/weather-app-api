@@ -40,8 +40,9 @@ const theme = createTheme();
 
 export default function Dashboard() {
   const [cards, setCards] = useState([]);
+  const [search, setSearch] = useState([]);
 
-  function AddLocation(location) {
+  function addLocation(location) {
     let query =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
       location +
@@ -73,8 +74,12 @@ export default function Dashboard() {
   }
 
   useEffect(() => {
-    AddLocation("Sydney");
+    addLocation("Sydney");
   }, []);
+
+  function changeSearch(event) {
+    setSearch(event.target.value);
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -126,8 +131,11 @@ export default function Dashboard() {
                 id="standard-basic"
                 label="Location"
                 variant="standard"
+                onChange={changeSearch}
               />
-              <Button variant="contained">Add Location</Button>
+              <Button variant="contained" onClick={() => addLocation(search)}>
+                Add Location
+              </Button>
               <Button variant="outlined">Update Data</Button>
             </Stack>
           </Container>
