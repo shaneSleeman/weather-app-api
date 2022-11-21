@@ -136,7 +136,6 @@ export default function Dashboard() {
               <Button variant="contained" onClick={() => addLocation(search)}>
                 Add Location
               </Button>
-              <Button variant="outlined">Update Data</Button>
             </Stack>
           </Container>
         </Box>
