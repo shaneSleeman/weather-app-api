@@ -1,5 +1,2 @@
-- favicon
-- appbar again?...
 - fahrenheit switch!
-- remove logs
-- remove todo
+- host

@@ -1,7 +1,7 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
-//import CameraIcon from "@mui/icons-material/PhotoCamera";
+import CameraIcon from "@mui/icons-material/PhotoCamera";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -12,6 +12,7 @@ import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -55,7 +56,6 @@ export default function Dashboard() {
       async function getData() {
         const response = await fetch(query, { mode: "cors" });
         weatherData = await response.json();
-        console.log(weatherData);
 
         let newCard = Location(
           weatherData.name,
@@ -65,7 +65,7 @@ export default function Dashboard() {
           weatherData.main.humidity,
           false
         );
-        console.log(weatherData);
+
         setCards((cards) => [...cards, newCard]);
       }
 
@@ -90,6 +90,14 @@ export default function Dashboard() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <AppBar position="relative">
+        <Toolbar>
+          <WbSunnyIcon sx={{ mr: 2 }} />
+          <Typography variant="h6" color="inherit" noWrap>
+            Weather Cards
+          </Typography>
+        </Toolbar>
+      </AppBar>
       <main>
         {/* Hero unit */}
         <Box
