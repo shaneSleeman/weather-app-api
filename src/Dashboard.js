@@ -75,6 +75,8 @@ export default function Dashboard() {
 
   useEffect(() => {
     addLocation("Sydney");
+    addLocation("Tokyo");
+    addLocation("New York");
   }, []);
 
   function changeSearch(event) {
@@ -119,7 +121,7 @@ export default function Dashboard() {
             >
               Enter a city below, then click Add Location. If the location
               exists, a card containing the city's weather and image will be
-              displayed. Click on the card to remove!
+              displayed!
             </Typography>
             <Stack
               sx={{ pt: 4 }}
