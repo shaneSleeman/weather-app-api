@@ -2,3 +2,4 @@
 - bar icon
 - fahrenheit switch!
 - weather icons
+- remove logs

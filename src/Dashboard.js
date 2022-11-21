@@ -54,24 +54,19 @@ export default function Dashboard() {
       async function getData() {
         const response = await fetch(query, { mode: "cors" });
         weatherData = await response.json();
-        //data = weatherData;
-        //img.src = catData.data.images.original.url;
         console.log(weatherData);
       }
 
       getData();
 
-      setCards((cards) => [...cards, location]);
+      let newCard = WeatherCard(weatherData.name);
+      console.log("got here");
+      setCards((cards) => [...cards, newCard]);
     } catch (e) {}
-
-    //if (weatherData.base == undefined) console.log("invalid");
-    //else console.log("valid");
-
-    //if (data.base == undefined) console.log("invalid location");
   }
 
   useEffect(() => {
-    AddLocation("Sydneyy");
+    AddLocation("Sydney");
   }, []);
 
   return (
