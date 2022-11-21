@@ -29,7 +29,7 @@ const WeatherCard = ({ card }) => {
               //pt: "56.25%",
             }
           }
-          image={"https://source.unsplash.com/2560x1440/?$" + card.name}
+          image={"https://source.unsplash.com/960x540/?$" + card.name}
           alt="random"
         />
         <CardContent sx={{ flexGrow: 1 }}>

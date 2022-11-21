@@ -86,14 +86,6 @@ export default function Dashboard() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          {/*<CameraIcon sx={{ mr: 2 }} />*/}
-          <Typography variant="h6" color="inherit" noWrap>
-            Weather Cards
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <main>
         {/* Hero unit */}
         <Box
