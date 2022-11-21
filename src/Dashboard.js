@@ -83,6 +83,10 @@ export default function Dashboard() {
     setSearch(event.target.value);
   }
 
+  const deleteFunction = (i) => {
+    setCards((cards) => cards.filter((item, n) => n !== i));
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -136,8 +140,12 @@ export default function Dashboard() {
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <WeatherCard card={card} />
+            {cards.map((card, i) => (
+              <WeatherCard
+                index={i}
+                card={card}
+                deleteFunction={deleteFunction}
+              />
             ))}
           </Grid>
         </Container>

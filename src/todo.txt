@@ -1,6 +1,4 @@
 - favicon
-- bar icon
 - fahrenheit switch!
-- weather icons
 - remove logs
 - remove todo

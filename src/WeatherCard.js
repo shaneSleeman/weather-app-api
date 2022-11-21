@@ -11,7 +11,7 @@ import React from "react";
 
 import Location from "./Location";
 
-const WeatherCard = ({ card }) => {
+const WeatherCard = ({ card, deleteFunction, index }) => {
   return (
     <Grid item key={card} xs={12} sm={6} md={4}>
       <Card
@@ -48,7 +48,9 @@ const WeatherCard = ({ card }) => {
           <Typography>Humidity: {card.humid}%</Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Remove</Button>
+          <Button size="small" onClick={() => deleteFunction(index)}>
+            Remove
+          </Button>
         </CardActions>
       </Card>
     </Grid>
