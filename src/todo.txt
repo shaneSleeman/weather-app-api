@@ -3,3 +3,4 @@
 - fahrenheit switch!
 - weather icons
 - remove logs
+- remove todo
