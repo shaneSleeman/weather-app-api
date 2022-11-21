@@ -18,6 +18,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { TextField } from "@mui/material";
 
 import WeatherCard from "./WeatherCard";
+import Location from "./Location";
 
 function Copyright() {
   return (
