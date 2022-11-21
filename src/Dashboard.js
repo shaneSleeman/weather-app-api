@@ -55,13 +55,20 @@ export default function Dashboard() {
         const response = await fetch(query, { mode: "cors" });
         weatherData = await response.json();
         console.log(weatherData);
+
+        let newCard = Location(
+          weatherData.name,
+          weatherData.sys.country,
+          weatherData.main.temp,
+          weatherData.weather.description,
+          weatherData.main.humidity,
+          false
+        );
+        console.log("got here");
+        setCards((cards) => [...cards, newCard]);
       }
 
       getData();
-
-      let newCard = WeatherCard(weatherData.name);
-      console.log("got here");
-      setCards((cards) => [...cards, newCard]);
     } catch (e) {}
   }
 

@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import React from "react";
 
+import Location from "./Location";
+
 const WeatherCard = ({ card }) => {
   return (
     <Grid item key={card} xs={12} sm={6} md={4}>
@@ -30,7 +32,7 @@ const WeatherCard = ({ card }) => {
         />
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography gutterBottom variant="h5" component="h2">
-            test
+            {card.name}
           </Typography>
           <Typography>
             This is a media card. You can use this section to describe the
