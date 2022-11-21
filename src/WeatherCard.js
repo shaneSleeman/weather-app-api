@@ -33,16 +33,19 @@ const WeatherCard = ({ card }) => {
           alt="random"
         />
         <CardContent sx={{ flexGrow: 1 }}>
+          <Typography variant="subtitle2" component="h3">
+            {card.country}
+          </Typography>
           <Typography gutterBottom variant="h5" component="h2">
             {card.name}
           </Typography>
-          <Typography variant="h6" component="h3">
+          <Typography variant="subtitle2" component="h3">
             {card.desc}
           </Typography>
           <Typography>
-            This is a media card. You can use this section to describe the
-            content.
+            Temperature: {Math.round((card.temp - 273.15) * 10) / 10}°C
           </Typography>
+          <Typography>Humidity: {card.humid}%</Typography>
         </CardContent>
         <CardActions>
           <Button size="small">Remove</Button>

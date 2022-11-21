@@ -61,11 +61,11 @@ export default function Dashboard() {
           weatherData.name,
           weatherData.sys.country,
           weatherData.main.temp,
-          weatherData.weather.description,
+          weatherData.weather[0].description,
           weatherData.main.humidity,
           false
         );
-        console.log("got here");
+        console.log(weatherData);
         setCards((cards) => [...cards, newCard]);
       }
 
