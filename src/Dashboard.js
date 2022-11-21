@@ -15,6 +15,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { TextField } from "@mui/material";
 
 function Copyright() {
   return (
@@ -41,7 +42,7 @@ export default function Dashboard() {
         <Toolbar>
           {/*<CameraIcon sx={{ mr: 2 }} />*/}
           <Typography variant="h6" color="inherit" noWrap>
-            Album layout
+            Weather Cards
           </Typography>
         </Toolbar>
       </AppBar>
@@ -62,7 +63,7 @@ export default function Dashboard() {
               color="text.primary"
               gutterBottom
             >
-              Album layout
+              Weather Cards
             </Typography>
             <Typography
               variant="h5"
@@ -70,9 +71,9 @@ export default function Dashboard() {
               color="text.secondary"
               paragraph
             >
-              Something short and leading about the collection below—its
-              contents, the creator, etc. Make it short and sweet, but not too
-              short so folks don&apos;t simply skip over it entirely.
+              Enter a city below, then click Add Location. If the location
+              exists, a card containing the city's weather and an image will be
+              displayed. Click on the card to remove!
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -80,8 +81,13 @@ export default function Dashboard() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
+              <TextField
+                id="standard-basic"
+                label="Location"
+                variant="standard"
+              />
+              <Button variant="contained">Add Location</Button>
+              <Button variant="outlined">Update Data</Button>
             </Stack>
           </Container>
         </Box>
